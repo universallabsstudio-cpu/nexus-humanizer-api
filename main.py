@@ -20,10 +20,10 @@ app = FastAPI(title="AI Humanizer API")
 
 # CORS Setup - Sirf specific domains ko allow karna for security
 origins = [
-    "http://127.0.0.1:5500",      
-    "http://localhost:3000",      
-    "https://nexussolver.in",     
-    "https://www.nexussolver.in"
+    "https://aitext2human.nexussolver.in",  # Aapka subdomain
+    "https://papaya-toffee-51b3f9.netlify.app", # Backup Netlify link
+    "http://localhost:5500", # Local testing ke liye
+    "http://127.0.0.1:5500"
 ]
 
 app.add_middleware(
