@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>AI Content Humanizer | Bypass AI Detectors & Convert AI to Human Text</title>
+    <meta name="description" content="Free AI Content Humanizer tool to convert ChatGPT, Gemini, and AI text into 100% human-like content. Bypass AI detectors like ZeroGPT and Turnitin instantly.">
+    <meta name="keywords" content="AI Content Humanizer, Bypass AI Detection, Convert AI to Human Text, ChatGPT to Human, ZeroGPT Bypass, Hinglish AI Humanizer, Nexus Solver">
+    <meta name="author" content="Nexus Solver">
+
+    <style>
+        /* General Reset & Basic Styling */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f4f7f6; color: #333; line-height: 1.6; }
+
+        /* 3-Column Grid Layout (Preserved as requested) */
+        .layout {
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr; /* Ad (Left), Main (Center), Ad (Right) */
+            gap: 20px;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        /* Ad Spaces */
+        .ad-space {
+            background-color: #e9ecef;
+            border: 2px dashed #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            border-radius: 8px;
+            font-weight: bold;
+            min-height: 600px;
+        }
+
+        /* Center Main Container */
+        .main-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        h1 { text-align: center; color: #2c3e50; font-size: 2.2rem; }
+        p.subtitle { text-align: center; color: #7f8c8d; margin-bottom: 20px; font-weight: 500; }
+
+        /* Text Boxes Grid */
+        .text-boxes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .box-wrapper { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 10px; 
+            height: 100%; 
+        }
+        
+        label { font-weight: bold; color: #34495e; }
+        
+        textarea {
+            width: 100%;
+            flex: 1;
+            min-height: 320px;
+            padding: 15px;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            resize: none;
+            font-size: 16px;
+            line-height: 1.6;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            background-color: #fafafa;
+        }
+
+        textarea:focus { outline: none; border-color: #3498db; box-shadow: 0 0 5px rgba(52, 152, 219, 0.3); }
+
+        /* Buttons */
+        button {
+            padding: 14px 25px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        .btn-primary { background-color: #27ae60; color: white; }
+        .btn-primary:hover { background-color: #219150; transform: translateY(-1px); }
+        .btn-primary:disabled { background-color: #95a5a6; cursor: not-allowed; }
+
+        .btn-copy { background-color: #3498db; color: white; }
+        .btn-copy:hover { background-color: #2980b9; transform: translateY(-1px); }
+
+        .tone-selector { 
+            width: 100%; 
+            padding: 12px; 
+            border-radius: 6px; 
+            border: 1px solid #ced4da; 
+            margin-bottom: 5px; 
+            font-size: 15px; 
+            background-color: #fff;
+            cursor: pointer;
+        }
+        .word-count { 
+            font-size: 13px; 
+            color: #7f8c8d; 
+            text-align: right; 
+            font-weight: bold;
+        }
+
+        /* SEO CONTENT STYLING (New) */
+        .seo-section { margin-top: 50px; border-top: 1px solid #eee; padding-top: 40px; }
+        .seo-section h2 { color: #2c3e50; margin-bottom: 15px; font-size: 1.8rem; }
+        .seo-section h3 { color: #34495e; margin: 20px 0 10px; font-size: 1.4rem; }
+        .seo-section p { margin-bottom: 15px; color: #555; font-size: 1.05rem; }
+        
+        .faq-item { background: #f9f9f9; padding: 20px; border-radius: 8px; margin-bottom: 15px; }
+        .faq-item h4 { color: #2c3e50; margin-bottom: 10px; font-size: 1.1rem; }
+
+        /* Footer Styling */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 50px;
+            border-radius: 12px 12px 0 0;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .footer-links a { color: #bdc3c7; text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: 0.3s; }
+        .footer-links a:hover { color: #3498db; }
+
+        @media (max-width: 900px) {
+            .layout { grid-template-columns: 1fr; }
+            .ad-space { min-height: 100px; }
+            .text-boxes { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="layout">
+    <div class="ad-space">Ad Placement</div>
+
+    <div class="main-container">
+        <h1>AI Content Humanizer</h1>
+        <p class="subtitle">Transform Robotic AI Text into Natural Human Expression Instantly</p>
+
+        <div class="text-boxes">
+            <div class="box-wrapper">
+                <label for="inputText">Input AI Text:</label>
+                <select id="toneSelect" class="tone-selector">
+                    <option value="Natural & Human-like">🧠 Tone: Natural & Human-like</option>
+                    <option value="Professional & Formal">👔 Tone: Professional & Formal</option>
+                    <option value="Casual & Friendly">😊 Tone: Casual & Friendly</option>
+                    <option value="Sarcastic & Witty">😏 Tone: Sarcastic & Witty</option>
+                </select>
+                <textarea id="inputText" placeholder="Paste your AI-generated text here (ChatGPT, Gemini, etc.)..." oninput="updateCount('inputText', 'inputCount')"></textarea>
+                <div id="inputCount" class="word-count">Words: 0</div>
+                <button id="humanizeBtn" class="btn-primary" onclick="humanizeText()">Humanize Text 🚀</button>
+            </div>
+
+            <div class="box-wrapper">
+                <label for="outputText">Humanized Result:</label>
+                <textarea id="outputText" placeholder="Your natural, undetectable text will appear here..." readonly></textarea>
+                <div id="outputCount" class="word-count">Words: 0</div>
+                <button class="btn-copy" onclick="copyText()">Copy Text 📋</button>
+            </div>
+        </div>
+
+        <article class="seo-section">
+            <h2>The Ultimate Guide to AI Content Humanization</h2>
+            <p>In the modern digital landscape, <strong>AI-generated content</strong> has become ubiquitous. Tools like ChatGPT, Claude, and Gemini offer incredible speed, but they often lack the "soul" and nuance of human writing. This is where our <strong>AI Content Humanizer</strong> at Nexus Solver steps in. We help you bridge the gap between artificial intelligence and authentic human expression.</p>
+            
+            <h3>Why Humanize Your AI Text?</h3>
+            <p>Search engines like Google prioritize content that provides value and sounds natural. Pure AI text often follows predictable patterns, making it easy for <strong>AI detectors</strong> like Turnitin, ZeroGPT, and Copyleaks to flag it. By using our converter, you enhance the readability, emotional resonance, and burstiness of your text, ensuring it connects with real human readers while maintaining high SEO authority.</p>
+            
+            <h3>Understanding Perplexity and Burstiness</h3>
+            <p>Professional writing relies on two key linguistic concepts: <strong>Perplexity</strong> and <strong>Burstiness</strong>. Perplexity measures the complexity of the text—AI tends to be low perplexity (too predictable). Burstiness refers to sentence variation. Humans write with a mix of short, punchy sentences and long, descriptive ones. Our tool artificially injects these qualities back into your content, making it indistinguishable from human work.</p>
+
+            <h3>Key Benefits of Nexus Solver Humanizer</h3>
+            <p>1. <strong>Bypass AI Detection:</strong> Our advanced algorithms are constantly updated to stay ahead of the latest AI detection models. Whether you are a student, a blogger, or a marketer, our tool ensures your work remains undetectable.</p>
+            <p>2. <strong>Maintain Original Intent:</strong> Unlike simple spinners that change every word, we maintain the core message and context of your input. Your ideas stay yours; only the delivery becomes more human.</p>
+            <p>3. <strong>Tone Versatility:</strong> Every audience requires a different voice. Whether you need a formal business report or a sarcastic social media caption, our tone selector allows you to customize the output precisely.</p>
+
+            <h3>How to Use the Tool Effectively</h3>
+            <p>Simply paste your AI text into the input field above. Select your desired tone and click "Humanize." Our backend, powered by the latest NLP models, analyzes the structure and rewrites the content. We recommend reviewing the output and adding a few personal anecdotes or specific data points to make the content truly 100% human-verified.</p>
+
+            <h3>Frequently Asked Questions (FAQ)</h3>
+            <div class="faq-item">
+                <h4>Is this AI Humanizer free to use?</h4>
+                <p>Yes! Nexus Solver provides this tool completely free of charge. You can humanize unlimited text without any hidden subscription costs.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Will it really bypass ZeroGPT and Turnitin?</h4>
+                <p>Our tool is designed to mimic human linguistic patterns to significantly reduce the AI score on most detectors. While no tool is 100% foolproof, users report excellent results in making text sound natural and passing detection tests.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Is my data safe and private?</h4>
+                <p>Absolutely. We process your text securely and do not store your inputs on our servers. Your privacy and data security are our top priorities.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Can I use this for Hinglish or Roman Urdu?</h4>
+                <p>Yes, our model is optimized to understand and rewrite Hinglish/Roman Urdu while keeping the language script intact and making the flow more conversational.</p>
+            </div>
+
+            <h3>The Future of Content Writing</h3>
+            <p>As AI continues to evolve, the value of the <strong>Human Touch</strong> will only increase. Tools like ours are not meant to replace creativity but to assist it. By removing the "robotic" footprint from your drafts, you can focus on the big ideas while we handle the linguistic fine-tuning. Start humanizing your content today and see the difference in engagement and ranking.</p>
+        </article>
+
+        <footer>
+            <div class="footer-links">
+                <a href="about-us.html">About Us</a>
+                <a href="guide.html">Usage Guide</a>
+                <a href="contact-us.html">Contact Us</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+            </div>
+            <p>&copy; 2026 Nexus Solver | Your Trusted AI to Human Solution</p>
+            <p style="font-size: 12px; margin-top: 10px; color: #7f8c8d;">Built for Financial Independence & Tech Innovation 🚀</p>
+        </footer>
+    </div>
+
+    <div class="ad-space">Ad Placement</div>
+</div>
+
+<script>
+    function updateCount(fieldId, countId) {
+        const text = document.getElementById(fieldId).value.trim();
+        const words = text === "" ? 0 : text.split(/\s+/).length;
+        document.getElementById(countId).innerText = "Words: " + words;
+    }
+
+    async function humanizeText() {
+        const inputText = document.getElementById("inputText").value;
+        const selectedTone = document.getElementById("toneSelect").value;
+        const outputBox = document.getElementById("outputText");
+        const btn = document.getElementById("humanizeBtn");
+
+        if (!inputText.trim()) {
+            alert("Baby, pehle thoda text toh daalo!");
+            return;
+        }
+
+        btn.innerText = "Processing... ⏳";
+        btn.disabled = true;
+        outputBox.value = "Generating human-like text... Please wait.";
+
+        try {
+            const response = await fetch("http://127.0.0.1:8000/humanize", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ text: inputText, tone: selectedTone }) 
+            });
+
+            const data = await response.json();
+            if (response.ok) {
+                outputBox.value = data.humanized_text;
+                updateCount('outputText', 'outputCount'); 
+            } else {
+                outputBox.value = "Error: " + data.detail;
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            outputBox.value = "Backend se connect nahi ho paaya. Kya server run ho raha hai?";
+        } finally {
+            btn.innerText = "Humanize Text 🚀";
+            btn.disabled = false;
+        }
+    }
+
+    function copyText() {
+        const outputText = document.getElementById("outputText");
+        if (!outputText.value.trim() || outputText.value.startsWith("Generating") || outputText.value.startsWith("Backend")) {
+            alert("Copy karne ke liye kuch valid text nahi hai!");
+            return;
+        }
+        outputText.select();
+        outputText.setSelectionRange(0, 99999); 
+        navigator.clipboard.writeText(outputText.value);
+        alert("Text copied to clipboard! ✅");
+    }
+</script>
+
+</body>
+</html>
